@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ClionProjects/HOMEWORK-0
+CMAKE_SOURCE_DIR = /root/ClionProjects/hello_world
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ClionProjects/HOMEWORK-0
+CMAKE_BINARY_DIR = /root/ClionProjects/hello_world
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ClionProjects/HOMEWORK-0/CMakeFiles /root/ClionProjects/HOMEWORK-0/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ClionProjects/hello_world/CMakeFiles /root/ClionProjects/hello_world/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ClionProjects/HOMEWORK-0/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ClionProjects/hello_world/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HOMEWORK_0
+# Target rules for targets named hello_world
 
 # Build rule for target.
-HOMEWORK_0: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HOMEWORK_0
-.PHONY : HOMEWORK_0
+hello_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello_world
+.PHONY : hello_world
 
 # fast build rule for target.
-HOMEWORK_0/fast:
-	$(MAKE) -f CMakeFiles/HOMEWORK_0.dir/build.make CMakeFiles/HOMEWORK_0.dir/build
-.PHONY : HOMEWORK_0/fast
+hello_world/fast:
+	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/build
+.PHONY : hello_world/fast
 
-main.o: main.cpp.o
+hello_world.o: hello_world.c.o
 
-.PHONY : main.o
+.PHONY : hello_world.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/HOMEWORK_0.dir/build.make CMakeFiles/HOMEWORK_0.dir/main.cpp.o
-.PHONY : main.cpp.o
+hello_world.c.o:
+	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.c.o
+.PHONY : hello_world.c.o
 
-main.i: main.cpp.i
+hello_world.i: hello_world.c.i
 
-.PHONY : main.i
+.PHONY : hello_world.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/HOMEWORK_0.dir/build.make CMakeFiles/HOMEWORK_0.dir/main.cpp.i
-.PHONY : main.cpp.i
+hello_world.c.i:
+	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.c.i
+.PHONY : hello_world.c.i
 
-main.s: main.cpp.s
+hello_world.s: hello_world.c.s
 
-.PHONY : main.s
+.PHONY : hello_world.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/HOMEWORK_0.dir/build.make CMakeFiles/HOMEWORK_0.dir/main.cpp.s
-.PHONY : main.cpp.s
+hello_world.c.s:
+	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.c.s
+.PHONY : hello_world.c.s
 
 # Help Target
 help:
@@ -156,12 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... HOMEWORK_0"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... edit_cache"
+	@echo "... hello_world"
+	@echo "... hello_world.o"
+	@echo "... hello_world.i"
+	@echo "... hello_world.s"
 .PHONY : help
 
 
